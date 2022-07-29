@@ -29,4 +29,24 @@ public class CashbackHackServiceTest {
 
 
     }
+    @Test
+    public void testPurchaseZero() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 0;
+        int actual = 1000;
+        int expected = service.remain(amount);
+
+        assertEquals(actual, expected);
+
+    }
+    @Test
+    public void testPurchaseAtTheBorderThousand() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1000;
+        int actual = 0;
+        int expected = service.remain(amount);
+
+        assertEquals(actual, expected);
+
+    }
 }
